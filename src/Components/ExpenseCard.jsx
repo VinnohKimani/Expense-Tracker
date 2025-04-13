@@ -1,47 +1,84 @@
-export function ExpenseCard() {
+import { useState } from "react";
+
+export function ExpenseCard({ onAddExpense }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+    category: "",
+    amount: "",
+    date: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onAddExpense(formData);
+    setFormData({
+      name: "",
+      description: "",
+      category: "",
+      amount: "",
+      date: "",
+    });
+  };
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    //this is to update the values while still preserving the previous inputed values
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
   return (
-    <div className="bg-white  w-[30%] rounded-xl  mt-10 ">
+    <div className="bg-white w-[30%] rounded-xl mt-10">
       <h3 className="text-2xl font-semibold p-2">Add Expense</h3>
-      <form action="input">
+      <form onSubmit={handleSubmit}>
         <div className="p-2">
           <h4>Enter your expense details below</h4>
-          <div className="grid grid-rows-1  place-content-between gap-2 pb-2">
-            <label htmlFor="expenseName"></label>
+          <div className="grid grid-rows-1 place-content-between gap-2 pb-2">
             <input
               type="text"
-              id="expenseName"
+              id="name"
               placeholder="Enter Expense Name"
-              className="border-2 rounded-sm "
+              className="border-2 rounded-sm"
+              value={formData.name}
+              onChange={handleChange}
+              required
             />
-            <label htmlFor="expenseDescription"></label>
             <input
               type="text"
-              id="expenseDescription"
+              id="description"
               placeholder="Enter Expense Description"
               className="border-2 rounded-sm"
+              value={formData.description}
+              onChange={handleChange}
             />
-            <label htmlFor="expenseCategory"></label>
             <input
               type="text"
-              id="expenseCategory"
+              id="category"
               placeholder="Enter Expense Category"
               className="border-2 rounded-sm"
+              value={formData.category}
+              onChange={handleChange}
             />
-            <label htmlFor="expenseAmount"></label>
             <input
-              type="text"
-              id="expenseAmount"
+              type="number"
+              id="amount"
               placeholder="Enter Expense Amount"
               className="border-2 rounded-sm"
+              value={formData.amount}
+              onChange={handleChange}
+              required
+              step="0.01"
             />
-            <label htmlFor="expenseDate"></label>
             <input
               type="date"
-              id="expenseDate"
-              placeholder="Enter Expense Date"
+              id="date"
               className="border-2 rounded-sm"
+              value={formData.date}
+              onChange={handleChange}
             />
-            <input type="submit" className="bg-black text-blue-50 rounded-sm" />
+            <button type="submit" className="bg-black text-blue-50 rounded-sm">
+              Add Expense
+            </button>
           </div>
         </div>
       </form>
