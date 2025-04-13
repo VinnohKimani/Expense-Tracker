@@ -52,9 +52,15 @@ function App() {
           Start taking control of your finances, life. Record,
           <br /> categorize and analyze your spending
         </h2>
-        <ExpenseCard onAddExpense={addExpense} />
-        <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-        <SummaryOfExpensesCard expenses={filteredExpenses} />
+        <div className="flex flex-row gap-8">
+          <div className="w-[30%]">
+            <ExpenseCard onAddExpense={addExpense} />
+          </div>
+          <div className="flex-1">
+            <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+            <SummaryOfExpensesCard expenses={filteredExpenses} />
+          </div>
+        </div>
       </div>
     </main>
   );

@@ -28,7 +28,7 @@ export function ExpenseCard({ onAddExpense }) {
   };
 
   return (
-    <div className="bg-white w-[30%] rounded-xl mt-10">
+    <div className="bg-white rounded-xl mt-10">
       <h3 className="text-2xl font-semibold p-2">Add Expense</h3>
       <form onSubmit={handleSubmit}>
         <div className="p-2">
