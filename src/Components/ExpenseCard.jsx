@@ -1,43 +1,43 @@
 export function ExpenseCard() {
   return (
-    <div className="bg-white w-[30%] rounded-xl  mt-10">
+    <div className="bg-white  w-[30%] rounded-xl  mt-10 ">
       <h3 className="text-2xl font-semibold p-2">Add Expense</h3>
       <form action="input">
         <div className="p-2">
           <h4>Enter your expense details below</h4>
           <div className="grid grid-rows-1  place-content-between gap-2 pb-2">
-            <label htmlFor="expensename"></label>
+            <label htmlFor="expenseName"></label>
             <input
               type="text"
-              id="expensename"
+              id="expenseName"
               placeholder="Enter Expense Name"
               className="border-2 rounded-sm "
             />
-            <label htmlFor="expensedescription"></label>
+            <label htmlFor="expenseDescription"></label>
             <input
               type="text"
-              id="expensedescription"
+              id="expenseDescription"
               placeholder="Enter Expense Description"
               className="border-2 rounded-sm"
             />
-            <label htmlFor="expensecategory"></label>
+            <label htmlFor="expenseCategory"></label>
             <input
               type="text"
-              id="expensecategory"
+              id="expenseCategory"
               placeholder="Enter Expense Category"
               className="border-2 rounded-sm"
             />
-            <label htmlFor="expenseamount"></label>
+            <label htmlFor="expenseAmount"></label>
             <input
               type="text"
-              id="expenseamount"
+              id="expenseAmount"
               placeholder="Enter Expense Amount"
               className="border-2 rounded-sm"
             />
-            <label htmlFor="expenseamount"></label>
+            <label htmlFor="expenseDate"></label>
             <input
               type="date"
-              id="expensedate"
+              id="expenseDate"
               placeholder="Enter Expense Date"
               className="border-2 rounded-sm"
             />

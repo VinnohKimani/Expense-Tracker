@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { ExpenseCard } from "./Components/ExpenseCard";
+import { SummaryOfExpensesCard } from "./Components/SummaryOfExpensesCard";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,6 +15,7 @@ function App() {
           <br /> categorize and analyze your spending
         </h2>
         <ExpenseCard />
+        <SummaryOfExpensesCard />
       </div>
     </main>
   );
