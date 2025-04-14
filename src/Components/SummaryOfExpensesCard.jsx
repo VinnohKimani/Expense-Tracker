@@ -1,4 +1,4 @@
-export function SummaryOfExpensesCard({ expenses }) {
+export function SummaryOfExpensesCard({ expenses, onDeleteExpense }) {
   return (
     <div className="mt-6 w-[80%]">
       <table className="border-2 w-full">
@@ -19,6 +19,15 @@ export function SummaryOfExpensesCard({ expenses }) {
               <td className="p-2">${expense.amount.toFixed(2)}</td>
               <td className="p-2">{expense.category}</td>
               <td className="p-2">{expense.date}</td>
+              <td className="p-2">
+                <button
+                  onClick={() => onDeleteExpense(expense.id)}
+                  className="text-red-600 hover:text-red-800 font-medium"
+                  title="Delete expense"
+                >
+                  Delete
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>

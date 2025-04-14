@@ -36,6 +36,9 @@ function App() {
       },
     ]);
   };
+  const deleteExpense = (id) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id));
+  };
 
   const filteredExpenses = expenses.filter(
     (expense) =>
@@ -45,7 +48,7 @@ function App() {
   );
 
   return (
-    <main className="bg-gray-100 ml-30 h-200">
+    <main className="bg-gray-100 ml-30 h-178">
       <div className="ml-5">
         <h1 className="text-6xl font-semibold font-serif">Expense Tracker</h1>
         <h2 className="text-1xl font-sans">
@@ -58,7 +61,10 @@ function App() {
           </div>
           <div className="flex-1">
             <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-            <SummaryOfExpensesCard expenses={filteredExpenses} />
+            <SummaryOfExpensesCard
+              expenses={filteredExpenses}
+              onDeleteExpense={deleteExpense}
+            />
           </div>
         </div>
       </div>

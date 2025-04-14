@@ -33,6 +33,7 @@ export function ExpenseCard({ onAddExpense }) {
       <form onSubmit={handleSubmit}>
         <div className="p-2">
           <h4>Enter your expense details below</h4>
+
           <div className="grid grid-rows-1 place-content-between gap-2 pb-2">
             <input
               type="text"
